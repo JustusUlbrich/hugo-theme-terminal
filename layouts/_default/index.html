@@ -42,6 +42,12 @@
           <img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
         {{ end }}
 
+        {{ if .Params.CoverVideo }}
+          <video src="{{ .Params.CoverVideo | absURL }}" autoplay muted loop class="post-cover">
+            {{ .Title | plainify | default " " }}
+          </video>
+        {{ end }}
+
         <div class="post-content">
           {{ if .Params.showFullContent }}
           {{ .Content | markdownify }}
